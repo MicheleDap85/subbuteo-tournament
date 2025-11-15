@@ -160,7 +160,7 @@ export default function MatchTimer({
           <button className="btn btn-sm btn-warning"
                   onClick={startET}
                   disabled={disabledAll || !canStartET}>
-            Avvia Supplementari
+            {startETButtonLabel}
           </button>
         )}
       </div>
