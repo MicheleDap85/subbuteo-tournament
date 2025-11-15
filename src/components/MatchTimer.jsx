@@ -126,6 +126,9 @@ export default function MatchTimer({
   const disabledAll = locked
   const canStartET = allowExtraTime && !locked && phase === 'FT'
 
+  // === testo button aggiornato ===
+  const startETButtonLabel = 'Avvia Supplementari (SD)'
+
   return (
     <div className="d-flex flex-column flex-sm-row align-items-sm-center gap-2">
       <span className="badge bg-dark">{labelPhase}</span>
