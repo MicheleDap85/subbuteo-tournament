@@ -1,0 +1,53 @@
+:root{
+  --brand:#0b5ed7; /* primary bootstrap-ish */
+}
+
+html, body, #root{
+  height:100%;
+}
+
+body{
+  background:#0b0b0e;
+  color:#f4f4f6;
+}
+
+a, .link{
+  color: var(--brand);
+  text-decoration: none;
+}
+
+.navbar-brand{
+  font-weight: 700;
+  letter-spacing: .3px;
+}
+
+.card{
+  background-color: #15151b;
+  border: 1px solid #24242a;
+  color:#f4f4f6;
+}
+
+.form-control, .form-select{
+  background-color:#101014;
+  border-color:#24242a;
+  color:#f4f4f6;
+}
+
+.btn-primary{
+  background-color:var(--brand);
+  border-color:var(--brand);
+}
+
+.table{
+  color:#e9e9ee;
+}
+.table thead th{
+  color:#c9c9d2;
+}
+.table-dark{
+  --bs-table-bg: #101014;
+  --bs-table-striped-bg: #15151b;
+  --bs-table-striped-color: #f4f4f6;
+  --bs-table-hover-bg: #18181e;
+  --bs-table-hover-color: #f4f4f6;
+}
