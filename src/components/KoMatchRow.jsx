@@ -104,7 +104,7 @@ export default function KoMatchRow({
       <div className="form-check form-switch mt-2">
         <input className="form-check-input" type="checkbox" id={`et-${fx.id}`}
                checked={useET} onChange={e=>setUseET(e.target.checked)} disabled={disabled} />
-        <label className="form-check-label" htmlFor={`et-${fx.id}`}>Supplementari (1×10 Sudden Death)</label>
+        <label className="form-check-label" htmlFor={`et-${fx.id}`}>Sudden Death</label>
       </div>
       {useET && (
         <div className="d-flex align-items-center gap-2 mt-1">
