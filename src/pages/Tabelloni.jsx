@@ -87,7 +87,7 @@ function FixtureCard({ fx, onSaved }) {
 
       <div className="form-check form-switch mb-2">
         <input className="form-check-input" type="checkbox" id={`et-${fx.id}`} checked={useET} onChange={e => setUseET(e.target.checked)} />
-        <label className="form-check-label" htmlFor={`et-${fx.id}`}>Supplementari (2x10)</label>
+        <label className="form-check-label" htmlFor={`et-${fx.id}`}>Sudden Death</label>
       </div>
       {useET && (
         <div className="d-flex align-items-center gap-2 mb-2">
