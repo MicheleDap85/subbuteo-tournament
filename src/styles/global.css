@@ -1,5 +1,10 @@
 :root{
-  --brand:#0b5ed7; /* primary bootstrap-ish */
+  --brand-primary: #0066cc;
+  --brand-secondary: #ffb300;
+  --dark-navy: #0a1428;
+  --dark-bg: #0f1419;
+  --card-bg: #1a2535;
+  --accent-gold: #ffd700;
 }
 
 html, body, #root{
@@ -7,8 +12,9 @@ html, body, #root{
 }
 
 body{
-  background:#0b0b0e;
-  color:#f4f4f6;
+  background: linear-gradient(135deg, var(--dark-bg) 0%, #1a2535 100%);
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 @keyframes fadeIn {
@@ -62,6 +68,15 @@ body{
   }
 }
 
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(255, 183, 0, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 183, 0, 0.6);
+  }
+}
+
 .page-enter {
   animation: fadeIn 0.3s ease-out;
 }
@@ -74,20 +89,29 @@ body{
   display: inline-block;
   width: 20px;
   height: 20px;
-  border: 3px solid rgba(244, 244, 246, 0.2);
-  border-top-color: var(--brand);
+  border: 3px solid rgba(255, 183, 0, 0.2);
+  border-top-color: var(--accent-gold);
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
 }
 
 .loading-skeleton {
-  background: linear-gradient(90deg, #15151b 25%, #1a1a20 50%, #15151b 75%);
+  background: linear-gradient(90deg, #1a2535 25%, #253552 50%, #1a2535 75%);
   background-size: 200% 100%;
   animation: pulse 1.5s ease-in-out infinite;
 }
 
 .card {
   animation: slideInUp 0.4s ease-out;
+  background: linear-gradient(135deg, var(--card-bg) 0%, #162647 100%);
+  border: 1px solid rgba(255, 183, 0, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  border-color: rgba(255, 183, 0, 0.4);
+  box-shadow: 0 8px 25px rgba(255, 183, 0, 0.15);
 }
 
 .card-loading {
