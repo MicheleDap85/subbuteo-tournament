@@ -160,17 +160,22 @@ export default function GiocoKO() {
             <small className="text-secondary">Torneo: <strong>{tournament.name}</strong></small>
           )}
           <button className="btn btn-outline-light btn-sm" onClick={loadKO} disabled={loading}>
-            {loading ? '...' : 'Aggiorna'}
+            {loading ? (
+              <>
+                <span className="loading-spinner me-1" style={{ display: 'inline-block' }}></span>
+                Caricamento...
+              </>
+            ) : 'Aggiorna'}
           </button>
         </div>
       </div>
 
       {currentRound && (
-        <div className="alert alert-secondary py-2">
+        <div className="alert alert-secondary py-2" style={{ animation: 'slideInUp 0.4s ease-out' }}>
           Round attivo: <strong>{currentRound.name}</strong>
         </div>
       )}
-      {error && <div className="alert alert-danger">{error}</div>}
+      {error && <div className="alert alert-danger" style={{ animation: 'slideInUp 0.4s ease-out' }}>{error}</div>}
       {!fixtures.length && !loading && <p className="text-secondary">Nessuna partita KO.</p>}
 
       {/* Waves del round attivo */}
