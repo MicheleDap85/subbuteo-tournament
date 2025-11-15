@@ -118,9 +118,7 @@ export default function MatchTimer({
     H2: '2° Tempo',
     FT: 'Fine tempi regolamentari',
     et_pre: 'Pre Supplementari (5s)',
-    ET1: '1° Tempo Supplementare',
-    et_break: 'Intervallo ET',
-    ET2: '2° Tempo Supplementare',
+    ET_SD: 'Supplementari (Sudden Death)',
     ET_FT: 'Fine Supplementari'
   })[phase] || phase
 
