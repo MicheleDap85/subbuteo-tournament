@@ -1,4 +1,5 @@
-import { Routes, Route, NavLink } from 'react-router-dom'
+import { Routes, Route, NavLink, useLocation } from 'react-router-dom'
+import { useEffect, useState } from 'react'
 import Admin from './pages/Admin.jsx'
 import Gironi from './pages/Gironi.jsx'
 import Gioco from './pages/Gioco.jsx'
