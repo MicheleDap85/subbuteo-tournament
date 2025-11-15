@@ -337,3 +337,18 @@ p {
 div, span, section, article, aside {
   color: inherit;
 }
+
+/* Tabelloni fixture card styling */
+.fixture-card .fixture-label {
+  color: var(--accent-gold) !important;
+  font-weight: 600;
+}
+
+.fixture-card .fixture-matchup {
+  color: var(--accent-gold) !important;
+  font-weight: 700;
+}
+
+.fixture-card .fixture-vs {
+  color: var(--accent-gold) !important;
+}
