@@ -179,49 +179,61 @@ export default function GiocoKO() {
       {!fixtures.length && !loading && <p className="text-secondary">Nessuna partita KO.</p>}
 
       {/* Waves del round attivo */}
-      <div className="d-flex flex-column gap-4">
-        {slots.map((slot) => {
-          const fieldsLabel = slot.fieldsUsed.length
-            ? `Campi attivi: ${slot.fieldsUsed.join(', ')}`
-            : `Campi attivi: assegnare numeri di campo`
-          const allScored = slot.fixtures.every(isScored)
-          const locked = !!lockedSlots[slot.index]
+      {loading && (
+        <div className="d-flex flex-column gap-4">
+          {[1, 2].map(i => (
+            <div key={i} className="card card-loading">
+              <div style={{ width: '100%', height: '150px', background: 'linear-gradient(90deg, #15151b 25%, #1a1a20 50%, #15151b 75%)', backgroundSize: '200% 100%', animation: 'pulse 1.5s ease-in-out infinite' }}></div>
+            </div>
+          ))}
+        </div>
+      )}
 
-          return (
-            <div key={slot.index} className="card">
-              <div className="card-body">
-                <div className="d-flex justify-content-between align-items-center mb-3">
-                  <div className="fw-bold">{fieldsLabel}</div>
-                  <MatchTimer onPhaseChange={()=>{}} locked={locked} allowExtraTime />
-                </div>
+      {!loading && (
+        <div className="d-flex flex-column gap-4">
+          {slots.map((slot) => {
+            const fieldsLabel = slot.fieldsUsed.length
+              ? `Campi attivi: ${slot.fieldsUsed.join(', ')}`
+              : `Campi attivi: assegnare numeri di campo`
+            const allScored = slot.fixtures.every(isScored)
+            const locked = !!lockedSlots[slot.index]
 
-                <div className="d-flex flex-column gap-2 mb-2">
-                  {slot.fixtures.map(fx => (
-                    <KoMatchRow
-                      key={fx.id}
-                      fx={fx}
-                      tournamentId={tournament?.id}
-                      locked={locked}
-                      onSaved={loadKO}
-                      availableReferees={slot.freePlayers}
-                    />
-                  ))}
-                </div>
+            return (
+              <div key={slot.index} className="card">
+                <div className="card-body">
+                  <div className="d-flex justify-content-between align-items-center mb-3">
+                    <div className="fw-bold">{fieldsLabel}</div>
+                    <MatchTimer onPhaseChange={()=>{}} locked={locked} allowExtraTime />
+                  </div>
 
-                <div className="d-flex justify-content-end">
-                  <button
-                    className="btn btn-success"
-                    disabled={!allScored || locked}
-                    onClick={() => handleConfirmWave(slot.index)}
-                  >
-                    Conferma turno
-                  </button>
+                  <div className="d-flex flex-column gap-2 mb-2">
+                    {slot.fixtures.map(fx => (
+                      <KoMatchRow
+                        key={fx.id}
+                        fx={fx}
+                        tournamentId={tournament?.id}
+                        locked={locked}
+                        onSaved={loadKO}
+                        availableReferees={slot.freePlayers}
+                      />
+                    ))}
+                  </div>
+
+                  <div className="d-flex justify-content-end">
+                    <button
+                      className="btn btn-success"
+                      disabled={!allScored || locked}
+                      onClick={() => handleConfirmWave(slot.index)}
+                    >
+                      Conferma turno
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
-          )
-        })}
-      </div>
+            )
+          })}
+        </div>
+      )}
 
       {slots.length === 0 && !loading && (
         <p className="text-secondary mt-3">Nessuna wave da giocare nel round attivo.</p>
