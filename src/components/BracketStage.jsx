@@ -26,8 +26,8 @@ function MatchCard({ fx, result }) {
         {fx.is_third_place ? '3º posto' : RN_LABEL[fx.round_name] || fx.round_name}
       </div>
 
-      <div className="fw-semibold text-truncate">
-        {fx.home?.first_name} {fx.home?.last_name} <span className="text-secondary">vs</span> {fx.away?.first_name} {fx.away?.last_name}
+      <div className="fw-semibold text-truncate match-players">
+        <span className="match-player-name">{fx.home?.first_name} {fx.home?.last_name}</span> <span className="match-vs">vs</span> <span className="match-player-name">{fx.away?.first_name} {fx.away?.last_name}</span>
       </div>
 
       <div className="mt-1">
