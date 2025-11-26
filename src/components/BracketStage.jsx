@@ -56,7 +56,7 @@ export default function BracketStage({ title, rounds }) {
         <div className="d-flex flex-row gap-3 overflow-auto">
           {visibleCols.map((k) => (
             <div key={k} className="d-flex flex-column" style={{ minWidth: 260 }}>
-              <div className="fw-bold mb-2">{RN_LABEL[k] || k}</div>
+              <div className="fw-bold mb-2" style={{ color: 'var(--accent-gold)' }}>{RN_LABEL[k] || k}</div>
               <div className="d-flex flex-column gap-2">
                 {rounds[k].map(fx => (
                   <MatchCard key={fx.id} fx={fx} result={fx.score} />
