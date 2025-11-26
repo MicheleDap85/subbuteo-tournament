@@ -79,9 +79,9 @@ export default function KoMatchRow({
       {/* header riga: nomi + campo */}
       <div className="d-flex justify-content-between align-items-center">
         <div className="me-2 text-truncate">
-          <strong>{fx.home?.first_name} {fx.home?.last_name}</strong>
+          <strong style={{ color: '#ffffff' }}>{fx.home?.first_name} {fx.home?.last_name}</strong>
           <span className="text-secondary"> vs </span>
-          <strong>{fx.away?.first_name} {fx.away?.last_name}</strong>
+          <strong style={{ color: '#ffffff' }}>{fx.away?.first_name} {fx.away?.last_name}</strong>
           <span className="ms-2 badge bg-secondary">Campo {fx.field_number ?? '-'}</span>
         </div>
         {fx.score && (
