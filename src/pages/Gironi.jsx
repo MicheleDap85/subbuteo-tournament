@@ -225,7 +225,7 @@ export default function Gironi(){
                             <div className="col-12 col-md-6" key={m.id}>
                               <div className="p-2 border rounded d-flex justify-content-between align-items-center">
                                 <div className="text-truncate">
-                                  <div className="text-truncate">
+                                  <div className="text-truncate text-secondary">
                                     {m.home.first_name} {m.home.last_name}{' '}
                                     <span className="text-secondary">vs</span>{' '}
                                     {m.away.first_name} {m.away.last_name}
