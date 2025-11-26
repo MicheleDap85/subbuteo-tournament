@@ -352,3 +352,8 @@ div, span, section, article, aside {
 .fixture-card .fixture-vs {
   color: #ffffff !important;
 }
+
+/* Gioco KO: nomi player in bianco */
+.match-player-name {
+  color: #ffffff !important;
+}
