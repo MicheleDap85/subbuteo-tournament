@@ -137,7 +137,7 @@ export default function SlotCard({
     <div className="card h-100">
       <div className="card-body d-flex flex-column">
         <div className="d-flex justify-content-between align-items-center mb-3">
-          <div className="fw-semibold">
+          <div className="fw-semibold" style={{ color: '#ffffff' }}>
             Turno {displayTurn}{' '}
             {slot?.waveIndex > 1 && (
               <span className="small text-secondary">(onda {slot.waveIndex})</span>
