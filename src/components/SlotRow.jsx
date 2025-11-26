@@ -19,10 +19,10 @@ export default function SlotRow({ fixture, value, onChange, disabled, showScore 
   return (
     <div className="d-flex align-items-center gap-2">
       <div className="flex-grow-1">
-        <div className="fw-semibold text-truncate match-players">
-          <span className="match-player-name">{fixture.home.first_name} {fixture.home.last_name}</span>
-          <span className="match-vs"> vs </span>
-          <span className="match-player-name">{fixture.away.first_name} {fixture.away.last_name}</span>
+        <div className="fw-semibold text-truncate text-secondary">
+          <span className="text-secondary">{fixture.home.first_name} {fixture.home.last_name}</span>
+          <span className="text-secondary"> vs </span>
+          <span className="text-secondary">{fixture.away.first_name} {fixture.away.last_name}</span>
         </div>
         <div className="small text-secondary">
           Arbitro: {fixture.referee?.first_name} {fixture.referee?.last_name || ''} • Campo:{' '}
@@ -39,7 +39,7 @@ export default function SlotRow({ fixture, value, onChange, disabled, showScore 
         onChange={(e)=> onChange?.({ home: e.target.value, away })}
         disabled={disabled}
       />
-      <span className="mx-1">���</span>
+      <span className="mx-1">–</span>
       <input
         type="number"
         className="form-control form-control-sm"
