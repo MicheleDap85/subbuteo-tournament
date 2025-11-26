@@ -319,7 +319,7 @@ a:hover, .link:hover {
 }
 
 .text-secondary {
-  color: #ffffff !important;
+  color: rgba(255, 255, 255, 0.6) !important;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -327,7 +327,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .small, small {
-  color: rgba(255, 255, 255, 0.85) !important;
+  color: rgba(255, 255, 255, 0.6) !important;
 }
 
 p {
