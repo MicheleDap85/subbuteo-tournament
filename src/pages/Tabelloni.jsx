@@ -44,13 +44,13 @@ function FixtureCard({ fx, onSaved }) {
   }
 
   return (
-    <div className="p-2 border rounded h-100">
-      <div className="small text-secondary mb-1">
+    <div className="p-2 border rounded h-100 fixture-card">
+      <div className="small text-secondary mb-1 fixture-label">
         {fx.is_third_place ? '3º posto' : ROUND_LABEL[fx.round_name] || fx.round_name}
       </div>
 
-      <div className="fw-semibold text-truncate">
-        {fx.home?.first_name} {fx.home?.last_name} <span className="text-secondary">vs</span>{' '}
+      <div className="fw-semibold text-truncate fixture-matchup">
+        {fx.home?.first_name} {fx.home?.last_name} <span className="fixture-vs">vs</span>{' '}
         {fx.away?.first_name} {fx.away?.last_name}
       </div>
       <div className="small text-secondary mb-2">Campo: <strong>{fx.field_number ?? '-'}</strong></div>
@@ -87,7 +87,7 @@ function FixtureCard({ fx, onSaved }) {
 
       <div className="form-check form-switch mb-2">
         <input className="form-check-input" type="checkbox" id={`et-${fx.id}`} checked={useET} onChange={e => setUseET(e.target.checked)} />
-        <label className="form-check-label" htmlFor={`et-${fx.id}`}>Supplementari (2x10)</label>
+        <label className="form-check-label" htmlFor={`et-${fx.id}`}>Sudden Death</label>
       </div>
       {useET && (
         <div className="d-flex align-items-center gap-2 mb-2">

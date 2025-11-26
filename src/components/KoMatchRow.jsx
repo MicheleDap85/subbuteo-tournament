@@ -79,9 +79,9 @@ export default function KoMatchRow({
       {/* header riga: nomi + campo */}
       <div className="d-flex justify-content-between align-items-center">
         <div className="me-2 text-truncate">
-          <strong>{fx.home?.first_name} {fx.home?.last_name}</strong>
+          <strong style={{ color: '#ffffff' }}>{fx.home?.first_name} {fx.home?.last_name}</strong>
           <span className="text-secondary"> vs </span>
-          <strong>{fx.away?.first_name} {fx.away?.last_name}</strong>
+          <strong style={{ color: '#ffffff' }}>{fx.away?.first_name} {fx.away?.last_name}</strong>
           <span className="ms-2 badge bg-secondary">Campo {fx.field_number ?? '-'}</span>
         </div>
         {fx.score && (
@@ -104,7 +104,7 @@ export default function KoMatchRow({
       <div className="form-check form-switch mt-2">
         <input className="form-check-input" type="checkbox" id={`et-${fx.id}`}
                checked={useET} onChange={e=>setUseET(e.target.checked)} disabled={disabled} />
-        <label className="form-check-label" htmlFor={`et-${fx.id}`}>Supplementari (2×10)</label>
+        <label className="form-check-label" htmlFor={`et-${fx.id}`}>Sudden Death</label>
       </div>
       {useET && (
         <div className="d-flex align-items-center gap-2 mt-1">

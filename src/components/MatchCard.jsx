@@ -70,9 +70,9 @@ export default function MatchCard({ fixture, tournamentId, onConfirmed }) {
 
         <div className="d-flex justify-content-between align-items-center mb-3">
           <div className="text-truncate">
-            <div className="fw-semibold">{fixture.home.first_name} {fixture.home.last_name}</div>
-            <div className="small text-secondary">vs</div>
-            <div className="fw-semibold">{fixture.away.first_name} {fixture.away.last_name}</div>
+            <div className="fw-semibold match-player-name">{fixture.home.first_name} {fixture.home.last_name}</div>
+            <div className="small match-vs">vs</div>
+            <div className="fw-semibold match-player-name">{fixture.away.first_name} {fixture.away.last_name}</div>
             <div className="small text-secondary">Arbitro: {fixture.referee?.first_name} {fixture.referee?.last_name}</div>
           </div>
           <div style={{minWidth:110}}>

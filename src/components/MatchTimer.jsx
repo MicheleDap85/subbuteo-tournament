@@ -80,10 +80,8 @@ export default function MatchTimer({
           case 'H1': setPhaseAndTime('break', 0); break
           case 'break': setPhaseAndTime('H2', halfDurationMs); break
           case 'H2': setPhaseAndTime('FT', 0); setRunning(false); break
-          case 'et_pre': setPhaseAndTime('ET1', etHalfDurationMs); break
-          case 'ET1': setPhaseAndTime('et_break', 0); break
-          case 'et_break': setPhaseAndTime('ET2', etHalfDurationMs); break
-          case 'ET2': setPhaseAndTime('ET_FT', 0); setRunning(false); break
+          case 'et_pre': setPhaseAndTime('ET_SD', etHalfDurationMs); break
+          case 'ET_SD': setPhaseAndTime('ET_FT', 0); setRunning(false); break
           default: setRunning(false)
         }
         return 0
@@ -120,15 +118,16 @@ export default function MatchTimer({
     H2: '2° Tempo',
     FT: 'Fine tempi regolamentari',
     et_pre: 'Pre Supplementari (5s)',
-    ET1: '1° Tempo Supplementare',
-    et_break: 'Intervallo ET',
-    ET2: '2° Tempo Supplementare',
+    ET_SD: 'Supplementari (Sudden Death)',
     ET_FT: 'Fine Supplementari'
   })[phase] || phase
 
   // === pulsanti disabilitati se locked ===
   const disabledAll = locked
   const canStartET = allowExtraTime && !locked && phase === 'FT'
+
+  // === testo button aggiornato ===
+  const startETButtonLabel = 'Avvia Supplementari (SD)'
 
   return (
     <div className="d-flex flex-column flex-sm-row align-items-sm-center gap-2">
@@ -161,7 +160,7 @@ export default function MatchTimer({
           <button className="btn btn-sm btn-warning"
                   onClick={startET}
                   disabled={disabledAll || !canStartET}>
-            Avvia Supplementari
+            {startETButtonLabel}
           </button>
         )}
       </div>

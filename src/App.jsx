@@ -1,4 +1,5 @@
-import { Routes, Route, NavLink } from 'react-router-dom'
+import { Routes, Route, NavLink, useLocation } from 'react-router-dom'
+import { useEffect, useState } from 'react'
 import Admin from './pages/Admin.jsx'
 import Gironi from './pages/Gironi.jsx'
 import Gioco from './pages/Gioco.jsx'
@@ -10,6 +11,31 @@ import Home from './pages/Home'
 
 
 
+
+function PageContent() {
+  const location = useLocation()
+  const [fadeIn, setFadeIn] = useState(false)
+
+  useEffect(() => {
+    setFadeIn(false)
+    const timer = requestAnimationFrame(() => setFadeIn(true))
+    return () => cancelAnimationFrame(timer)
+  }, [location.pathname])
+
+  return (
+    <div style={{ opacity: fadeIn ? 1 : 0, transition: 'opacity 0.3s ease-out' }}>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/admin" element={<Admin />} />
+        <Route path="/gironi" element={<Gironi />} />
+        <Route path="/gioco" element={<Gioco />} />
+        <Route path="/tabelloni" element={<Tabelloni />} />
+        <Route path="/gioco-ko" element={<GiocoKO />} />
+        <Route path="/brackets" element={<Brackets />} />
+      </Routes>
+    </div>
+  )
+}
 
 export default function App() {
   return (
@@ -35,17 +61,7 @@ export default function App() {
         </div>
       </nav>
 
-       
-
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/admin" element={<Admin />} />
-        <Route path="/gironi" element={<Gironi />} />
-        <Route path="/gioco" element={<Gioco />} />
-        <Route path="/tabelloni" element={<Tabelloni />} />
-        <Route path="/gioco-ko" element={<GiocoKO />} />
-        <Route path="/brackets" element={<Brackets />} />
-      </Routes>
+      <PageContent />
     </>
   )
 }
